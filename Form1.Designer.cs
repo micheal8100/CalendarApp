@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calnedar));
             FLPDayContainer = new FlowLayoutPanel();
             LBEMonday = new Label();
             LBLSunday = new Label();
@@ -36,27 +37,15 @@
             LBLThursday = new Label();
             LBLWednesday = new Label();
             LBETuesday = new Label();
-            panel1 = new Panel();
-            panel2 = new Panel();
-            panel3 = new Panel();
-            panel4 = new Panel();
-            panel5 = new Panel();
-            panel6 = new Panel();
-            panel7 = new Panel();
             lblMonth = new Label();
-            button1 = new Button();
-            FLPDayContainer.SuspendLayout();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // FLPDayContainer
             // 
-            FLPDayContainer.Controls.Add(panel1);
-            FLPDayContainer.Controls.Add(panel2);
-            FLPDayContainer.Controls.Add(panel3);
-            FLPDayContainer.Controls.Add(panel4);
-            FLPDayContainer.Controls.Add(panel5);
-            FLPDayContainer.Controls.Add(panel6);
-            FLPDayContainer.Controls.Add(panel7);
             FLPDayContainer.Location = new Point(12, 145);
             FLPDayContainer.Margin = new Padding(1);
             FLPDayContainer.Name = "FLPDayContainer";
@@ -133,85 +122,43 @@
             LBETuesday.TabIndex = 8;
             LBETuesday.Text = "Tuesday";
             // 
-            // panel1
-            // 
-            panel1.Location = new Point(1, 1);
-            panel1.Margin = new Padding(1);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(173, 142);
-            panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            panel2.Location = new Point(176, 1);
-            panel2.Margin = new Padding(1);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(173, 142);
-            panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            panel3.Location = new Point(353, 3);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(173, 142);
-            panel3.TabIndex = 1;
-            // 
-            // panel4
-            // 
-            panel4.Location = new Point(530, 1);
-            panel4.Margin = new Padding(1);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(173, 142);
-            panel4.TabIndex = 1;
-            // 
-            // panel5
-            // 
-            panel5.Location = new Point(705, 1);
-            panel5.Margin = new Padding(1);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(173, 142);
-            panel5.TabIndex = 1;
-            // 
-            // panel6
-            // 
-            panel6.Location = new Point(880, 1);
-            panel6.Margin = new Padding(1);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(173, 142);
-            panel6.TabIndex = 1;
-            // 
-            // panel7
-            // 
-            panel7.Location = new Point(1055, 1);
-            panel7.Margin = new Padding(1);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(173, 142);
-            panel7.TabIndex = 1;
-            // 
             // lblMonth
             // 
             lblMonth.Font = new Font("Modern No. 20", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblMonth.Location = new Point(55, 55);
             lblMonth.Name = "lblMonth";
-            lblMonth.Size = new Size(188, 31);
+            lblMonth.Size = new Size(188, 41);
             lblMonth.TabIndex = 9;
             lblMonth.Text = "Month";
             // 
-            // button1
+            // pictureBox1
             // 
-            button1.Location = new Point(216, 55);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 31);
-            button1.TabIndex = 10;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(202, 55);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(41, 41);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 10;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(249, 55);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(41, 41);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 11;
+            pictureBox2.TabStop = false;
             // 
             // Calnedar
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(1254, 891);
-            Controls.Add(button1);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
             Controls.Add(lblMonth);
             Controls.Add(LBETuesday);
             Controls.Add(LBLWednesday);
@@ -226,7 +173,8 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
-            FLPDayContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -241,14 +189,8 @@
         private Label LBLThursday;
         private Label LBLWednesday;
         private Label LBETuesday;
-        private Panel panel1;
-        private Panel panel2;
-        private Panel panel3;
-        private Panel panel4;
-        private Panel panel5;
-        private Panel panel6;
-        private Panel panel7;
         private Label lblMonth;
-        private Button button1;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }
