@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 
 namespace CalendarApp
@@ -13,6 +14,7 @@ namespace CalendarApp
     public partial class UC_Day : UserControl
     {
         string _day;
+        public static string staticDay = "";
         public UC_Day(string day)
         {
             InitializeComponent();
@@ -25,5 +27,15 @@ namespace CalendarApp
 
         }
 
+        private void UC_DaysClick(object sender, EventArgs e)
+        {
+            staticDay = lblDays.Text;
+            EventForm eventForm = new EventForm();
+            eventForm.Show();
+        }
+        public void SetEventLable(string even)
+        {
+            lblEventHolder.Text = even;
+        }
     }
 }

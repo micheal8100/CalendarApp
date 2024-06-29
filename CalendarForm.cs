@@ -4,13 +4,21 @@ namespace CalendarApp
 {
     public partial class Calnedar : Form
     {
-        static int _month, _year;
+        public static int _month, _year;
+        EventForm ev = new EventForm();
         public Calnedar()
         {
             InitializeComponent();
             ShowDays(DateTime.Now.Month, DateTime.Now.Year);
         }
-
+        public int GetMonth()
+        {
+            return _month; 
+        }
+        public int GetYear()
+        {
+            return _year;
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -21,42 +29,52 @@ namespace CalendarApp
             FLPDayContainer.Controls.Clear();
             _year = year;
             _month = month;
-
             //get the name of the month
             String monthName = new DateTimeFormatInfo().GetMonthName(month);
 
             //set the month textbox to month name + year
             lblMonth.Text = monthName.ToUpper() + "  " + year;
-
+            FillFlowLayoutPanel(month,year);
+        }
+        public void FillFlowLayoutPanel(int month, int year)
+        {
             DateTime startOfTheMonth = new DateTime(year, month, 1);
             int day = DateTime.DaysInMonth(year, month);
-            int week = Convert.ToInt32(startOfTheMonth.DayOfWeek.ToString("d"));
+            int startingDay = Convert.ToInt32(startOfTheMonth.DayOfWeek.ToString("d"));
             //adds planke panels until the staring day of the week
-            for (int i = 1; i < week; i++)
+            for (int i = 1; i <= startingDay; i++)
             {
-                UC_Day uc = new UC_Day("");
-                FLPDayContainer.Controls.Add(uc);
+                UC_Filler filler = new UC_Filler();
+                FLPDayContainer.Controls.Add(filler);
             }
             //adds accural panels for every day of the month
             for (int i = 1; i <= day; i++)
             {
                 UC_Day uc = new UC_Day(i + "");
                 FLPDayContainer.Controls.Add(uc);
+                foreach (Event even in ev.GetEvents())
+                {
+                    if (even.date == (i + "/" + _month + "/" + _year))
+                    {
+                        uc.SetEventLable(even.reminder);
+                    }
+                }
             }
-
         }
         //Pervius button
         private void ptbPervious_Click(object sender, EventArgs e)
         {
-            //decrease the month
-            _month--;
-            //if less then 1 set month to 12 and trun back the year by 1
-            if (_month < 1)
+            //if greater then 1 decrease month by 1
+            if (_month > 1)
+            {
+                _month--;
+            }// check to make sure year is greater or equal to 0 if so decrease year by 1 and set month to 12
+            else if (_year >= 0)
             {
                 _year--;
                 _month = 12;
             }
-            //rerun the ShowDays camand with new month and year values
+            //rerun the ShowDays camand with new month and year values (if year is <0 then no value has changed and it will reload the same page)
             ShowDays(_month, _year);
         }
         //Next button

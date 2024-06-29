@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             Panel = new Panel();
+            lblEventHolder = new Label();
             lblDays = new Label();
             Panel.SuspendLayout();
             SuspendLayout();
@@ -37,12 +38,23 @@
             // 
             Panel.BackColor = Color.White;
             Panel.BorderStyle = BorderStyle.FixedSingle;
+            Panel.Controls.Add(lblEventHolder);
             Panel.Controls.Add(lblDays);
             Panel.Dock = DockStyle.Fill;
             Panel.Location = new Point(1, 1);
             Panel.Name = "Panel";
             Panel.Size = new Size(171, 140);
             Panel.TabIndex = 0;
+            Panel.Click += UC_DaysClick;
+            // 
+            // lblEventHolder
+            // 
+            lblEventHolder.Location = new Point(2, 57);
+            lblEventHolder.Name = "lblEventHolder";
+            lblEventHolder.Size = new Size(164, 81);
+            lblEventHolder.TabIndex = 1;
+            lblEventHolder.TextAlign = ContentAlignment.MiddleCenter;
+            lblEventHolder.Click += UC_DaysClick;
             // 
             // lblDays
             // 
@@ -54,12 +66,12 @@
             lblDays.TabIndex = 0;
             lblDays.Text = "00";
             // 
-            // UC_load
+            // UC_Day
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(Panel);
-            Name = "UC_load";
+            Name = "UC_Day";
             Padding = new Padding(1);
             Size = new Size(173, 142);
             Load += UC_Load_1;
@@ -72,5 +84,6 @@
 
         private Panel Panel;
         private Label lblDays;
+        private Label lblEventHolder;
     }
 }
