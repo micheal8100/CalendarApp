@@ -10,25 +10,20 @@ using System.Windows.Forms;
 
 namespace CalendarApp
 {
-    public partial class UC_load : UserControl
+    public partial class UC_Day : UserControl
     {
-        string _day, date, weekday;
-        public UC_load(string day)
+        string _day;
+        public UC_Day(string day)
         {
             InitializeComponent();
             _day = day;
             lblDays.Text = day;
-            chb.Hide();
-
         }
 
         private void UC_Load_1(object sender, EventArgs e)
         {
 
         }
-        private void ShowDays(int month, )
-        {
 
-        }
     }
 }

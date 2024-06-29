@@ -1,6 +1,6 @@
 ﻿namespace CalendarApp
 {
-    partial class UC_load
+    partial class UC_Day
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             Panel = new Panel();
-            chb = new CheckBox();
             lblDays = new Label();
             Panel.SuspendLayout();
             SuspendLayout();
@@ -37,22 +36,13 @@
             // Panel
             // 
             Panel.BackColor = Color.White;
-            Panel.Controls.Add(chb);
+            Panel.BorderStyle = BorderStyle.FixedSingle;
             Panel.Controls.Add(lblDays);
             Panel.Dock = DockStyle.Fill;
             Panel.Location = new Point(1, 1);
             Panel.Name = "Panel";
             Panel.Size = new Size(171, 140);
             Panel.TabIndex = 0;
-            // 
-            // chb
-            // 
-            chb.AutoSize = true;
-            chb.Location = new Point(12, 20);
-            chb.Name = "chb";
-            chb.Size = new Size(18, 17);
-            chb.TabIndex = 1;
-            chb.UseVisualStyleBackColor = true;
             // 
             // lblDays
             // 
@@ -72,7 +62,7 @@
             Name = "UC_load";
             Padding = new Padding(1);
             Size = new Size(173, 142);
-            Load += this.UC_Load_1;
+            Load += UC_Load_1;
             Panel.ResumeLayout(false);
             Panel.PerformLayout();
             ResumeLayout(false);
@@ -82,6 +72,5 @@
 
         private Panel Panel;
         private Label lblDays;
-        private CheckBox chb;
     }
 }
