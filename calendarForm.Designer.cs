@@ -46,17 +46,17 @@
             // 
             // FLPDayContainer
             // 
-            FLPDayContainer.Location = new Point(14, 146);
+            FLPDayContainer.Location = new Point(6, 75);
             FLPDayContainer.Margin = new Padding(1);
             FLPDayContainer.Name = "FLPDayContainer";
-            FLPDayContainer.Size = new Size(1277, 768);
+            FLPDayContainer.Size = new Size(1277, 915);
             FLPDayContainer.TabIndex = 0;
             // 
             // LBEMonday
             // 
             LBEMonday.AutoSize = true;
             LBEMonday.Font = new Font("Modern No. 20", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LBEMonday.Location = new Point(240, 122);
+            LBEMonday.Location = new Point(232, 51);
             LBEMonday.Name = "LBEMonday";
             LBEMonday.Size = new Size(75, 22);
             LBEMonday.TabIndex = 2;
@@ -66,7 +66,7 @@
             // 
             LBLSunday.AutoSize = true;
             LBLSunday.Font = new Font("Modern No. 20", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LBLSunday.Location = new Point(66, 122);
+            LBLSunday.Location = new Point(58, 51);
             LBLSunday.Name = "LBLSunday";
             LBLSunday.Size = new Size(70, 22);
             LBLSunday.TabIndex = 3;
@@ -76,7 +76,7 @@
             // 
             LBLSaturday.AutoSize = true;
             LBLSaturday.Font = new Font("Modern No. 20", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LBLSaturday.Location = new Point(1140, 122);
+            LBLSaturday.Location = new Point(1132, 51);
             LBLSaturday.Name = "LBLSaturday";
             LBLSaturday.Size = new Size(82, 22);
             LBLSaturday.TabIndex = 4;
@@ -86,7 +86,7 @@
             // 
             LBLFriday.AutoSize = true;
             LBLFriday.Font = new Font("Modern No. 20", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LBLFriday.Location = new Point(965, 122);
+            LBLFriday.Location = new Point(957, 51);
             LBLFriday.Name = "LBLFriday";
             LBLFriday.Size = new Size(64, 22);
             LBLFriday.TabIndex = 5;
@@ -96,7 +96,7 @@
             // 
             LBLThursday.AutoSize = true;
             LBLThursday.Font = new Font("Modern No. 20", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LBLThursday.Location = new Point(780, 123);
+            LBLThursday.Location = new Point(772, 52);
             LBLThursday.Name = "LBLThursday";
             LBLThursday.Size = new Size(86, 22);
             LBLThursday.TabIndex = 6;
@@ -106,7 +106,7 @@
             // 
             LBLWednesday.AutoSize = true;
             LBLWednesday.Font = new Font("Modern No. 20", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LBLWednesday.Location = new Point(590, 122);
+            LBLWednesday.Location = new Point(582, 51);
             LBLWednesday.Name = "LBLWednesday";
             LBLWednesday.Size = new Size(101, 22);
             LBLWednesday.TabIndex = 7;
@@ -116,7 +116,7 @@
             // 
             LBETuesday.AutoSize = true;
             LBETuesday.Font = new Font("Modern No. 20", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LBETuesday.Location = new Point(419, 122);
+            LBETuesday.Location = new Point(411, 51);
             LBETuesday.Name = "LBETuesday";
             LBETuesday.Size = new Size(75, 22);
             LBETuesday.TabIndex = 8;
@@ -126,7 +126,7 @@
             // 
             lblMonth.AutoSize = true;
             lblMonth.Font = new Font("Modern No. 20", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMonth.Location = new Point(41, 55);
+            lblMonth.Location = new Point(28, 9);
             lblMonth.Name = "lblMonth";
             lblMonth.Size = new Size(95, 31);
             lblMonth.TabIndex = 9;
@@ -135,7 +135,7 @@
             // ptbPervious
             // 
             ptbPervious.Image = (Image)resources.GetObject("ptbPervious.Image");
-            ptbPervious.Location = new Point(299, 55);
+            ptbPervious.Location = new Point(286, 9);
             ptbPervious.Name = "ptbPervious";
             ptbPervious.Size = new Size(41, 31);
             ptbPervious.SizeMode = PictureBoxSizeMode.Zoom;
@@ -146,7 +146,7 @@
             // ptbNext
             // 
             ptbNext.Image = (Image)resources.GetObject("ptbNext.Image");
-            ptbNext.Location = new Point(346, 55);
+            ptbNext.Location = new Point(333, 9);
             ptbNext.Name = "ptbNext";
             ptbNext.Size = new Size(41, 31);
             ptbNext.SizeMode = PictureBoxSizeMode.Zoom;
@@ -159,7 +159,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(1301, 929);
+            ClientSize = new Size(1301, 1004);
             Controls.Add(ptbNext);
             Controls.Add(ptbPervious);
             Controls.Add(lblMonth);

@@ -20,6 +20,11 @@ namespace CalendarApp
         {
             InitializeComponent();
         }
+        public void SetEventString(string events)
+        {
+           
+            txbEvent.Text = events;
+        }
         public List<Event> GetEvents()
         {
             // runs the eserializeData() method to make sure we have the updated version.
@@ -31,7 +36,6 @@ namespace CalendarApp
             //sets the date text box to the curent date when opened
             txbDate.Text = UC_Day.staticDay + "/" + Calnedar._month + "/" + Calnedar._year;
         }
-        
         private void butSave_Click(object sender, EventArgs e)
         {
             
@@ -41,9 +45,17 @@ namespace CalendarApp
             even.reminder = txbEvent.Text;
             //runs deserializeData
             DeserializeData();
-            events.Add( even );
+            //check if there is already an event on the date 
+            foreach(Event i in events)
+            {
+                if (i.date == even.date)
+                {
+                    events.Remove( i );
+                    break;
+                }
+            }
+            events.Add(even);
             //seralises the object events
-
             var serializedObject = Newtonsoft.Json.JsonConvert.SerializeObject( events, Newtonsoft.Json.Formatting.Indented );
             // writes to the text file in order to save data
             using (StreamWriter sw = new StreamWriter(path))
@@ -52,6 +64,7 @@ namespace CalendarApp
             }
             //shows message that event has been saved
             MessageBox.Show("Saved");
+            this.Hide();
         }
         //populates the events list with all serilised data
         private void DeserializeData()

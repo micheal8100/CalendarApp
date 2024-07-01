@@ -48,6 +48,7 @@
             // 
             txbEvent.Font = new Font("Modern No. 20", 12F);
             txbEvent.Location = new Point(38, 126);
+            txbEvent.MaxLength = 200;
             txbEvent.Name = "txbEvent";
             txbEvent.Size = new Size(338, 29);
             txbEvent.TabIndex = 1;
@@ -79,9 +80,9 @@
             lblEvent.Font = new Font("Modern No. 20", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblEvent.Location = new Point(38, 101);
             lblEvent.Name = "lblEvent";
-            lblEvent.Size = new Size(58, 22);
+            lblEvent.Size = new Size(65, 22);
             lblEvent.TabIndex = 4;
-            lblEvent.Text = "Event";
+            lblEvent.Text = "Events";
             // 
             // EventForm
             // 

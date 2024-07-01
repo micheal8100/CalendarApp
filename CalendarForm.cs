@@ -13,7 +13,7 @@ namespace CalendarApp
         }
         public int GetMonth()
         {
-            return _month; 
+            return _month;
         }
         public int GetYear()
         {
@@ -34,7 +34,7 @@ namespace CalendarApp
 
             //set the month textbox to month name + year
             lblMonth.Text = monthName.ToUpper() + "  " + year;
-            FillFlowLayoutPanel(month,year);
+            FillFlowLayoutPanel(month, year);
         }
         public void FillFlowLayoutPanel(int month, int year)
         {
@@ -52,13 +52,7 @@ namespace CalendarApp
             {
                 UC_Day uc = new UC_Day(i + "");
                 FLPDayContainer.Controls.Add(uc);
-                foreach (Event even in ev.GetEvents())
-                {
-                    if (even.date == (i + "/" + _month + "/" + _year))
-                    {
-                        uc.SetEventLable(even.reminder);
-                    }
-                }
+                uc.eventChecker();
             }
         }
         //Pervius button
@@ -81,15 +75,15 @@ namespace CalendarApp
         private void ptbNext_Click(object sender, EventArgs e)
         {
             //increases the month
-            _month ++;
+            _month++;
             //if moonth is greater then 12 set month to 1 and year increases by 1
-            if (_month >12)
+            if (_month > 12)
             {
                 _year++;
                 _month = 1;
             }
             //rerun the ShowDays camand with new month and year values
-            ShowDays(_month,_year);
+            ShowDays(_month, _year);
         }
     }
 }

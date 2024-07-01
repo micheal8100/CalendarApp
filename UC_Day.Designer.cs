@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Panel = new Panel();
             lblEventHolder = new Label();
             lblDays = new Label();
+            tmeCheck = new System.Windows.Forms.Timer(components);
             Panel.SuspendLayout();
             SuspendLayout();
             // 
@@ -66,6 +68,10 @@
             lblDays.TabIndex = 0;
             lblDays.Text = "00";
             // 
+            // tmeCheck
+            // 
+            tmeCheck.Tick += timCheck_tick;
+            // 
             // UC_Day
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -85,5 +91,6 @@
         private Panel Panel;
         private Label lblDays;
         private Label lblEventHolder;
+        private System.Windows.Forms.Timer tmeCheck;
     }
 }
