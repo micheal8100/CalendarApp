@@ -13,18 +13,19 @@ namespace CalendarApp
     public partial class EventForm : Form
     {
         //stores a path to find the save file
-        string path = Path.Combine(Environment.CurrentDirectory, "saveFile.txt");
+        readonly string path = Path.Combine(Environment.CurrentDirectory, "saveFile.txt");
         //stores all events registered by the user
         List<Event> events = new List<Event>();
         public EventForm()
         {
             InitializeComponent();
         }
+        //sets the Event string if there is an event on that day
         public void SetEventString(string events)
         {
-           
             txbEvent.Text = events;
         }
+        //returns the events list
         public List<Event> GetEvents()
         {
             // runs the eserializeData() method to make sure we have the updated version.

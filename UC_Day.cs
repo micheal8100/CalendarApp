@@ -13,6 +13,7 @@ namespace CalendarApp
 {
     public partial class UC_Day : UserControl
     {
+        //a string to store the day
         string _day;
         public static string staticDay = "";
         public UC_Day(string day)
@@ -21,38 +22,37 @@ namespace CalendarApp
             _day = day;
             lblDays.Text = day;
         }
-
         private void UC_Load_1(object sender, EventArgs e)
         {
-
         }
-
         private void UC_DaysClick(object sender, EventArgs e)
         {
 
             staticDay = lblDays.Text;
             EventForm ev = new EventForm();
             ev.SetEventString(lblEventHolder.Text);
+            //opens the events form
             ev.Show();
             //starts the timer
             tmeCheck.Start();
-            //stops the timer if form has been closed
+            //stops the timer if form has been closed or save button has been clicked
             if (ev.Visible == false)
             {
                 tmeCheck.Stop();
             }
         }
-
+        //sets the lbleventhoulder lable
         public void SetEventLable(string even)
         {
             lblEventHolder.Text = even;
         }
 
-        //checks every tick 
+        //runs the eventChecker to check for new events every tick
         private void timCheck_tick(object sender, EventArgs e)
         {
             eventChecker();
         }
+        //checks if there is an event on the UC_Day
         public void eventChecker()
         {
             EventForm ev = new EventForm();

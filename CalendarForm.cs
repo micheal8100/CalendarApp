@@ -9,19 +9,11 @@ namespace CalendarApp
         public Calnedar()
         {
             InitializeComponent();
+            //runs the show days comanded
             ShowDays(DateTime.Now.Month, DateTime.Now.Year);
-        }
-        public int GetMonth()
-        {
-            return _month;
-        }
-        public int GetYear()
-        {
-            return _year;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
         //sets all the panels in FLP day contain. sets the month text box 
         private void ShowDays(int month, int year)
@@ -38,6 +30,7 @@ namespace CalendarApp
         }
         public void FillFlowLayoutPanel(int month, int year)
         {
+            //get the frist day of the month
             DateTime startOfTheMonth = new DateTime(year, month, 1);
             int day = DateTime.DaysInMonth(year, month);
             int startingDay = Convert.ToInt32(startOfTheMonth.DayOfWeek.ToString("d"));
